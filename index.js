@@ -22,14 +22,17 @@ app.get('/', (req, res) => {
 	res.redirect('/api/posts');
 });
 
-
 // Hand off requests on the '/api/bookmarks' route to the bookmarks controller
 const postsController = require('./controllers/postsController');
 app.use('/api/posts/', postsController);
 
 // Users controller
 const usersController = require('./controllers/usersController');
-app.use('/api', usersController);
+app.use('/api/users', usersController);
+
+// Comment controller
+const commentController = require('./controllers/commentsController');
+app.use('/comments', commentController);
 
 // if in the controller, the .catch is thrown and next is invoked, it'll come back here
 const { handleErrors } = require('./middleware/custom_errors');

@@ -1,4 +1,5 @@
 const mongoose = require('../db/connection');
+const commentSchema = require('./Comment');
 
 const postSchema = new mongoose.Schema(
 	{
@@ -9,6 +10,7 @@ const postSchema = new mongoose.Schema(
 			ref: 'User',
 			required: false,
 		},
+		comments: [commentSchema],
 	},
 	{
 		timestamps: true,
