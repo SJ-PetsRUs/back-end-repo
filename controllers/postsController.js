@@ -10,6 +10,10 @@ const Post = require('../models/Post');
 // GET (index) /api/Posts/
 router.get('/', (req, res, next) => {
 	Post.find()
+		.populate({
+			path: 'comments',
+			populate: { path: 'commentator', model: 'User' },
+		})
 		.then((posts) => res.json(posts))
 		.catch(next);
 });
