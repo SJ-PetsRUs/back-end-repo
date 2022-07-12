@@ -28,7 +28,7 @@ app.use('/api/posts/', postsController);
 
 // Users controller
 const usersController = require('./controllers/usersController');
-app.use('/api/users', usersController);
+app.use('/api/users/', usersController);
 
 // Comment controller
 const commentController = require('./controllers/commentsController');
