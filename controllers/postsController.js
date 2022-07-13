@@ -31,7 +31,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // POST (create) /api/Posts/
-router.post('/',  (req, res, next) => {
+router.post('/', (req, res, next) => {
 	Post.create(req.body)
 		.then((post) => res.status(201).json(post))
 		.catch(next);
@@ -57,7 +57,7 @@ router.put('/:id', requireToken, async (req, res, next) => {
 });
 
 // DELETE (delete) /api/Posts/5eb579b99b05e67b897e860b
-router.delete('/:id', requireToken, (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
 	Post.findOneAndDelete({
 		_id: req.params.id,
 	})
