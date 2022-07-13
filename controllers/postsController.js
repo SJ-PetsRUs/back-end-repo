@@ -31,7 +31,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // POST (create) /api/Posts/
-router.post('/', requireToken, (req, res, next) => {
+router.post('/',  (req, res, next) => {
 	Post.create(req.body)
 		.then((post) => res.status(201).json(post))
 		.catch(next);
