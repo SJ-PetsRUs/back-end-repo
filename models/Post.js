@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema(
 	{
 		title: String,
 		body: String,
-		votes: { Number, default: 0 },
+		votes: { type: Number, default: 0 },
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
