@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema(
 	{
 		title: String,
 		body: String,
-		votes: Number,
+		votes: { Number, default: 0 },
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
@@ -15,11 +15,9 @@ const postSchema = new mongoose.Schema(
 	},
 	{
 		timestamps: true,
-	},
-	//
-	{
-		votes: Number
 	}
+	//
+
 	//
 );
 
