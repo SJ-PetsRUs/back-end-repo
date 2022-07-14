@@ -38,19 +38,37 @@ router.post('/', (req, res, next) => {
 });
 
 // PUT (update) /api/Posts/5eb579b99b05e67b897e860b
-router.put('/:id', requireToken, async (req, res, next) => {
+// router.put('/:id', requireToken, async (req, res, next) => {
+// 	try {
+// 		// find the document being requested
+// 		const post = await Post.findById(req.params.id);
+// 		// validate ownership
+// 		if (handleValidateOwnership(req, post)) {
+// 			// if valid owner, then update the document
+// 			Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
+// 				new: true,
+// 			})
+// 				.then((post) => res.json(post))
+// 				.catch(next);
+// 		}
+// 	} catch (error) {
+// 		next(error);
+// 	}
+// });
+
+router.put('/:id', async (req, res, next) => {
 	try {
 		// find the document being requested
 		const post = await Post.findById(req.params.id);
 		// validate ownership
-		if (handleValidateOwnership(req, post)) {
-			// if valid owner, then update the document
-			Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
-				new: true,
-			})
-				.then((post) => res.json(post))
-				.catch(next);
-		}
+		// if (handleValidateOwnership(req, post)) {
+		// if valid owner, then update the document
+		Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
+			new: true,
+		})
+			.then((post) => res.json(post))
+			.catch(next);
+		// }
 	} catch (error) {
 		next(error);
 	}
