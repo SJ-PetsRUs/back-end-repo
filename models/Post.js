@@ -5,6 +5,7 @@ const postSchema = new mongoose.Schema(
 	{
 		title: String,
 		body: String,
+		votes: { type: Number, default: 0 },
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
@@ -15,6 +16,9 @@ const postSchema = new mongoose.Schema(
 	{
 		timestamps: true,
 	}
+	//
+
+	//
 );
 
 const Post = mongoose.model('Post', postSchema);
