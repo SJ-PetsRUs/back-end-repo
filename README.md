@@ -31,15 +31,9 @@ This is the backend for [Redoit](https://redoit.netlify.app/), a Full Stack (MER
 - POST: api/posts
 - PATCH: api/posts/:id
 
-**Comments**
-
-- GET: /comments
-- POST: /comments
-- DELETE: /comments/:id
-
 **Users**
 
 - GET: api/users
-- POST: api/users/signup
+- POST: api/users
 
 _To see our deployed backend API, click [here](https://redoit-api.herokuapp.com/api/users)_
