@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema(
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
-			required: false,
+			required: true,
 		},
 		comments: [commentSchema],
 	},
